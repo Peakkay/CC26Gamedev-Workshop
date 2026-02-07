@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Move(float direction)
     {
+        if (rb == null) return;
         if (!attack.attacking)
         {
             rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocityY);
@@ -64,13 +65,4 @@ public class PlayerMove : MonoBehaviour
     {
         isGrounded = feet.IsTouchingLayers(groundMask);
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Debug.Log("Punch hit Player");
-        }
-    }
-
 }

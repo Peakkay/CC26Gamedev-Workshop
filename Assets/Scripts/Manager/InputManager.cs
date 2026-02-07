@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.SceneManagement;
 
 public class InputManager : Singleton<InputManager>
 {
@@ -36,4 +37,23 @@ public class InputManager : Singleton<InputManager>
             jumpcall = false;
         }
     }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(player == null){player = FindFirstObjectByType<PlayerMove>();}
+        if(attack == null){attack = FindFirstObjectByType<PlayerAttack>();}
+        
+        Debug.Log("Rebound player references");
+    }
+
 }

@@ -19,6 +19,10 @@ public class EnemyFight : MonoBehaviour
     public float punchDelay = 0.5f;
     Transform player;
 
+    void Start()
+    {
+        punchHitbox.enabled = false;
+    }
     void Update()
     {
         TrySense();
@@ -92,14 +96,6 @@ public class EnemyFight : MonoBehaviour
     public void DisablePunch()
     {
         punchHitbox.enabled = false;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Kick hit Enemy!");
-        }
     }
 
     public IEnumerator Punch()
