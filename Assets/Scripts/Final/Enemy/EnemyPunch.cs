@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;   
 
-public class EnemyPunch : MonoBehaviour
+public class EnemyPunch2 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {

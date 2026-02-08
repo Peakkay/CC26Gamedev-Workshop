@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.SceneManagement;
 
-public class InputManager : Singleton<InputManager>
+public class InputManager2 : Singleton<InputManager2>
 {
-    [SerializeField] PlayerMove player;
-    [SerializeField] PlayerAttack attack;
+    [SerializeField] PlayerMove2 player;
+    [SerializeField] PlayerAttack2 attack;
     float horizontal = 0f;
     bool jumpcall = false;
 
@@ -50,8 +50,8 @@ public class InputManager : Singleton<InputManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(player == null){player = FindFirstObjectByType<PlayerMove>();}
-        if(attack == null){attack = FindFirstObjectByType<PlayerAttack>();}
+        if(player == null){player = FindFirstObjectByType<PlayerMove2>();}
+        if(attack == null){attack = FindFirstObjectByType<PlayerAttack2>();}
         
         Debug.Log("Rebound player references");
     }

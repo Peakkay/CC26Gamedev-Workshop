@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack2 : MonoBehaviour
 {
-    public PlayerMove player;
+    public PlayerMove2 player;
     public Animator animator;
     public Collider2D kickHitbox;
     public float kickCooldown = 1.2f;

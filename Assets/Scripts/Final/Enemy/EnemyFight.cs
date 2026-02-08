@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyFight : MonoBehaviour
+public class EnemyFight2 : MonoBehaviour
 {
-    public EnemyMove move;
+    public EnemyMove2 move;
     public LayerMask playerMask;
 
     public float senseDistance = 5f;
@@ -46,6 +46,7 @@ public class EnemyFight : MonoBehaviour
         {
             move.hasSensed = true;
             player = hit.collider.transform;
+            Debug.Log("Player has been sensed");
         }
         else
         {

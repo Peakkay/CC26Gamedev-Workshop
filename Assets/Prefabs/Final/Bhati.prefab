@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5969153334742040346}
   - component: {fileID: 9046220909092997523}
   - component: {fileID: 74406221325892804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -148,7 +148,9 @@ GameObject:
   - component: {fileID: 6027814166005253131}
   - component: {fileID: 2617714810600574944}
   - component: {fileID: 3072670669883799346}
+  - component: {fileID: 8228362969782269373}
   - component: {fileID: 8478359221685264592}
+  - component: {fileID: 1716641653673987151}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Player
@@ -264,9 +266,29 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.48775387, y: 0.09012389}
-  m_Size: {x: 2.2161555, y: 4.5397515}
+  m_Offset: {x: 0.012601216, y: 0.09012381}
+  m_Size: {x: 2.0645394, y: 4.5397515}
   m_Direction: 0
+--- !u!114 &8228362969782269373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086321700719485082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96ce605ec2e0574aae0dc3206437690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  player: {fileID: 8478359221685264592}
+  animator: {fileID: 1716641653673987151}
+  kickHitbox: {fileID: 5329087423677583609}
+  kickCooldown: 1.2
+  lastKickTime: 0
+  kickDuration: 0.45
+  kickActiveTime: 0.2
+  attacking: 0
 --- !u!114 &8478359221685264592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed16ab4da5dfe6645b082623b6af6c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  attack: {fileID: 0}
+  attack: {fileID: 8228362969782269373}
   moveSpeed: 5
   jumpPower: 5
   isGrounded: 0
@@ -288,9 +310,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   rb: {fileID: 7730811011518798935}
-  sprite: {fileID: 0}
+  sprite: {fileID: 2617714810600574944}
   isFacingRight: 1
   lastMoveDir: 1
+--- !u!95 &1716641653673987151
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086321700719485082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 658a7a2087b003e4a9586b549b35ff75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3815270025149966433
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +345,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8887286174785752645}
   - component: {fileID: 5329087423677583609}
-  m_Layer: 0
+  - component: {fileID: 6849879656683707200}
+  m_Layer: 6
   m_Name: Kick
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -369,6 +414,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.8665369, y: 1.3950369}
   m_EdgeRadius: 0
+--- !u!114 &6849879656683707200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815270025149966433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa861764f18f8764fb847461014c64d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerKick
 --- !u!1 &4473418507970130041
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3986812305256486193}
   - component: {fileID: 3478892132990016511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +492,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.42626762, y: -1.9842545}
+  m_Offset: {x: 0.028583914, y: -1.9842545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -445,7 +502,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.952919, y: 0.45931935}
+  m_Size: {x: 1.0741932, y: 0.45931935}
   m_EdgeRadius: 0
 --- !u!1 &8182358110914463335
 GameObject:
@@ -457,9 +514,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2101149985184881021}
   - component: {fileID: 7730811011518798935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bhati
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

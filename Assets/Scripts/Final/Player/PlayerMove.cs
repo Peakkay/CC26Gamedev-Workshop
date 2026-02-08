@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove2 : MonoBehaviour
 {
-    [SerializeField] PlayerAttack attack;
+    [SerializeField] PlayerAttack2 attack;
     public float moveSpeed = 5f;
     public float jumpPower = 5f;
 

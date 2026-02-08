@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AryaFight : MonoBehaviour
 {
-    public EnemyMove move;
+    public EnemyMove2 move;
     public LayerMask playerMask;
 
     public float senseDistance = 5f;

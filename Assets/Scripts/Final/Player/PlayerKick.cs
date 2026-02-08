@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerKick : MonoBehaviour
+public class PlayerKick2 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
